@@ -113,7 +113,7 @@ export default function AdminDashboard() {
           </form>
 
           <div className="mt-4 text-center text-sm text-gray-600 dark:text-gray-400">
-            <p>For demo purposes: username = "admin", password = "password"</p>
+            <p>For demo purposes: username = &quot;admin&quot;, password = &quot;password&quot;</p>
           </div>
         </div>
       </div>
@@ -360,7 +360,7 @@ export default function AdminDashboard() {
                   <tr>
                     <td className="whitespace-nowrap px-6 py-4">
                       <div className="font-medium text-gray-900 dark:text-white">
-                        Parent's Guide to Substance Abuse Prevention
+                        Parent&apos;s Guide to Substance Abuse Prevention
                       </div>
                     </td>
                     <td className="whitespace-nowrap px-6 py-4 text-gray-500 dark:text-gray-400">
