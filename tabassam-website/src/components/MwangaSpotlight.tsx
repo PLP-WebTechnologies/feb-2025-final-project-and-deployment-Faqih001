@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function MwangaSpotlight() {
   // Project stats that would be updated from admin dashboard
@@ -113,55 +114,54 @@ export default function MwangaSpotlight() {
 
           {/* Right column - Progress dashboard */}
           <motion.div
-            className="rounded-xl bg-white p-6 shadow-lg dark:bg-gray-800"
+            className="relative rounded-xl bg-white p-6 shadow-lg dark:bg-gray-800"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h3 className="mb-6 text-2xl font-bold text-center text-gray-800 dark:text-white">
-              Project Progress
-            </h3>
+            {/* Background image for the dashboard */}
+            <div className="absolute inset-0 z-0 overflow-hidden rounded-xl">
+              <div className="absolute inset-0 bg-gradient-to-b from-white via-white to-transparent opacity-90 dark:from-gray-800 dark:via-gray-800"></div>
+              <Image 
+                src="/images/mwanga-project.jpg" 
+                alt="Mwanga Wa Kesho Yetu Project" 
+                fill
+                className="object-cover opacity-20"
+              />
+            </div>
             
-            <div className="mb-8 space-y-8">
-              {projectStats.map((stat, index) => (
-                <div key={index}>
-                  <div className="mb-2 flex justify-between">
-                    <span className="text-sm font-medium text-gray-600 dark:text-gray-300">
-                      {stat.label}
-                    </span>
-                    <span className="text-sm font-bold text-gray-700 dark:text-gray-200">
-                      {stat.value} / {stat.target}
-                    </span>
+            {/* Content overlaid on the background image */}
+            <div className="relative z-10">
+              <h3 className="mb-6 text-center text-2xl font-bold text-gray-800 dark:text-white">
+                Project Progress
+              </h3>
+              
+              <div className="mb-8 space-y-8">
+                {projectStats.map((stat, index) => (
+                  <div key={index}>
+                    <div className="mb-2 flex justify-between">
+                      <span className="text-sm font-medium text-gray-600 dark:text-gray-300">
+                        {stat.label}
+                      </span>
+                      <span className="text-sm font-bold text-gray-700 dark:text-gray-200">
+                        {stat.value} / {stat.target}
+                      </span>
+                    </div>
+                    <div className="h-3 w-full rounded-full bg-gray-200 dark:bg-gray-700">
+                      <motion.div
+                        className={`h-full rounded-full ${stat.color}`}
+                        initial={{ width: "0%" }}
+                        whileInView={{ width: `${(stat.value / stat.target) * 100}%` }}
+                        transition={{ duration: 1.2, delay: 0.3 * index }}
+                        viewport={{ once: true }}
+                      />
+                    </div>
                   </div>
-                  <div className="h-3 w-full rounded-full bg-gray-200 dark:bg-gray-700">
-                    <motion.div
-                      className={`h-full rounded-full ${stat.color}`}
-                      initial={{ width: "0%" }}
-                      whileInView={{ width: `${(stat.value / stat.target) * 100}%` }}
-                      transition={{ duration: 1.2, delay: 0.3 * index }}
-                      viewport={{ once: true }}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-10 rounded-md bg-orange-50 p-4 dark:bg-orange-900/10">
-              <h4 className="mb-3 text-center text-lg font-semibold text-gray-800 dark:text-white">
-                Next Milestone
-              </h4>
-              <div className="mb-4 flex items-center justify-center space-x-2">
-                <div className="h-3 w-3 rounded-full bg-orange-500 animate-pulse" />
-                <span className="text-orange-600 dark:text-orange-400">August 2024</span>
+                ))}
               </div>
-              <p className="text-center text-sm text-gray-700 dark:text-gray-300">
-                Launch of youth entrepreneurship program with 25 participants
-                from Likoni secondary schools.
-              </p>
-            </div>
 
-            <div className="mt-6 text-center">
+              <div className="mt-10 rounded-md bg-orange-50 p-4 dark:bg-orange-900/10">
               <button
                 className="rounded-full bg-orange-500 px-5 py-2.5 text-sm font-medium text-white hover:bg-orange-600 transition-colors"
               >

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Resources() {
   const [activeTab, setActiveTab] = useState("policy");
@@ -39,7 +40,8 @@ export default function Resources() {
         date: "March 2024",
         summary: "Latest guidelines on youth drug prevention and control measures in Kenya.",
         tag: "Kenya",
-        downloadUrl: "#"
+        downloadUrl: "#",
+        imageUrl: "/images/policy-brief.jpg"
       },
       {
         id: 2,
@@ -48,7 +50,8 @@ export default function Resources() {
         date: "January 2024",
         summary: "Comprehensive approach to youth mental health services across Kenya.",
         tag: "Kenya",
-        downloadUrl: "#"
+        downloadUrl: "#",
+        imageUrl: "/images/policy-brief.jpg"
       },
       {
         id: 3,
@@ -57,7 +60,8 @@ export default function Resources() {
         date: "November 2023",
         summary: "International standards for prevention of drug use among children and youth.",
         tag: "International",
-        downloadUrl: "#"
+        downloadUrl: "#",
+        imageUrl: "/images/policy-brief.jpg"
       }
     ],
     research: [
@@ -68,7 +72,8 @@ export default function Resources() {
         date: "February 2024",
         summary: "Research examining key factors contributing to youth drug use in coastal regions.",
         tag: "Academic",
-        downloadUrl: "#"
+        downloadUrl: "#",
+        imageUrl: "/images/research-paper.jpg"
       },
       {
         id: 2,
@@ -77,7 +82,8 @@ export default function Resources() {
         date: "December 2023",
         summary: "Evaluation of prevention programs in Kenyan secondary schools.",
         tag: "Government",
-        downloadUrl: "#"
+        downloadUrl: "#",
+        imageUrl: "/images/research-paper.jpg"
       }
     ],
     toolkits: [
@@ -88,7 +94,8 @@ export default function Resources() {
         date: "April 2024",
         summary: "Practical tools for parents to recognize and address substance abuse risks.",
         tag: "Families",
-        downloadUrl: "#"
+        downloadUrl: "#",
+        imageUrl: "/images/teaching-toolkit.jpg"
       },
       {
         id: 2,
@@ -97,7 +104,8 @@ export default function Resources() {
         date: "January 2024",
         summary: "Resources for educators to implement prevention programs in classrooms.",
         tag: "Education",
-        downloadUrl: "#"
+        downloadUrl: "#",
+        imageUrl: "/images/teaching-toolkit.jpg"
       }
     ],
     reports: [
@@ -108,7 +116,8 @@ export default function Resources() {
         date: "May 2024",
         summary: "First evaluation of our programs and interventions in Likoni.",
         tag: "Internal",
-        downloadUrl: "#"
+        downloadUrl: "#",
+        imageUrl: "/images/project-report.jpg"
       },
       {
         id: 2,
@@ -117,7 +126,8 @@ export default function Resources() {
         date: "April 2024",
         summary: "Updates on our flagship youth intervention program.",
         tag: "Project",
-        downloadUrl: "#"
+        downloadUrl: "#",
+        imageUrl: "/images/project-report.jpg"
       }
     ]
   };
@@ -201,6 +211,14 @@ export default function Resources() {
               className="overflow-hidden rounded-lg bg-white shadow-md transition-all hover:shadow-lg dark:bg-gray-800"
               variants={cardVariants}
             >
+              <div className="relative h-48 w-full overflow-hidden">
+                <Image 
+                  src={resource.imageUrl}
+                  alt={resource.title}
+                  fill
+                  className="object-cover transition-transform hover:scale-105"
+                />
+              </div>
               <div className="p-5">
                 <div className="mb-4 flex items-center justify-between">
                   <span className="rounded-full bg-orange-100 px-3 py-1 text-xs font-medium text-orange-800 dark:bg-orange-900/30 dark:text-orange-300">
