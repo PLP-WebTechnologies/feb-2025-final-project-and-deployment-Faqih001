@@ -1,23 +1,33 @@
+"use client";
+
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   // Array of letters for the headline
   const headlineLetters = "TABASSAM".split("");
+  const [videoError, setVideoError] = useState(false);
 
   return (
     <div className="relative min-h-screen w-full overflow-hidden">
-      {/* Video Background */}
-      <div className="absolute inset-0 z-0 bg-black/50">
-        <video
-          className="h-full w-full object-cover opacity-70"
-          autoPlay
-          loop
-          muted
-          playsInline
-        >
-          {/* Replace with actual video source when available */}
-          <source src="/video-background.mp4" type="video/mp4" />
-        </video>
+      {/* Video Background or Fallback Gradient */}
+      <div className="absolute inset-0 z-0">
+        {!videoError ? (
+          <div className="relative h-full w-full bg-black/50">
+            <video
+              className="h-full w-full object-cover opacity-70"
+              autoPlay
+              loop
+              muted
+              playsInline
+              onError={() => setVideoError(true)}
+            >
+              <source src="/video-background.mp4" type="video/mp4" />
+            </video>
+          </div>
+        ) : (
+          <div className="h-full w-full bg-gradient-to-b from-gray-900 via-orange-900/40 to-black"></div>
+        )}
       </div>
 
       {/* Main Content */}
