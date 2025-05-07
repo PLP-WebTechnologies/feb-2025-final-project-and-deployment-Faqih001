@@ -1,11 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
 import Image from "next/image";
 
 export default function ImpactCounters() {
-  const [instagramPosts, setInstagramPosts] = useState([
+  // Changed from useState to a constant array since we're not updating it
+  const instagramPosts = [
     {
       id: 1,
       imageUrl: "https://placehold.co/300x300/orange/white?text=Instagram+Post",
@@ -21,7 +21,7 @@ export default function ImpactCounters() {
       imageUrl: "https://placehold.co/300x300/orange/white?text=Instagram+Post",
       caption: "Mwanga Wa Kesho Yetu progress #MwangaWaKeshoYetu",
     },
-  ]);
+  ];
 
   // Placeholder achievements that would come from admin dashboard
   const achievements = [

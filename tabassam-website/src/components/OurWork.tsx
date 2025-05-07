@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 export default function OurWork() {
   // Audience tiles data
@@ -69,7 +68,7 @@ export default function OurWork() {
           </h2>
           <div className="mx-auto h-1 w-24 bg-orange-500"></div>
           <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-            Our focus is exclusively on children and youth - Kenya's present and future.
+            Our focus is exclusively on children and youth - Kenya&apos;s present and future.
           </p>
         </div>
 
