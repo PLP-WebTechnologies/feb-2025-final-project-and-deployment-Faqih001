@@ -162,11 +162,26 @@ export default function MwangaSpotlight() {
               </div>
 
               <div className="mt-10 rounded-md bg-orange-50 p-4 dark:bg-orange-900/10">
-              <button
-                className="rounded-full bg-orange-500 px-5 py-2.5 text-sm font-medium text-white hover:bg-orange-600 transition-colors"
-              >
-                Support This Project
-              </button>
+                <h4 className="mb-3 text-center text-lg font-semibold text-gray-800 dark:text-white">
+                  Next Milestone
+                </h4>
+                <div className="mb-4 flex items-center justify-center space-x-2">
+                  <div className="h-3 w-3 rounded-full bg-orange-500 animate-pulse" />
+                  <span className="text-orange-600 dark:text-orange-400">August 2024</span>
+                </div>
+                <p className="text-center text-sm text-gray-700 dark:text-gray-300">
+                  Launch of youth entrepreneurship program with 25 participants
+                  from Likoni secondary schools.
+                </p>
+              </div>
+
+              <div className="mt-6 text-center">
+                <button
+                  className="rounded-full bg-orange-500 px-5 py-2.5 text-sm font-medium text-white hover:bg-orange-600 transition-colors"
+                >
+                  Support This Project
+                </button>
+              </div>
             </div>
           </motion.div>
         </div>
