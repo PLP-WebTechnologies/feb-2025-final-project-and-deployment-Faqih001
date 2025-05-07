@@ -170,7 +170,7 @@ export default function Home() {
             </svg>
           </Link>
           <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
-            For demo: username = "admin", password = "password"
+            For demo: username = &quot;admin&quot;, password = &quot;password&quot;
           </p>
         </div>
       </section>
@@ -182,7 +182,7 @@ export default function Home() {
             <div className="text-center md:text-left">
               <h3 className="mb-2 text-2xl font-bold text-orange-500">TABASSAM</h3>
               <p className="text-sm text-gray-300">
-                Proudly and unapologetically focused on Kenya's children and youth.
+                Proudly and unapologetically focused on Kenya&apos;s children and youth.
               </p>
             </div>
 
