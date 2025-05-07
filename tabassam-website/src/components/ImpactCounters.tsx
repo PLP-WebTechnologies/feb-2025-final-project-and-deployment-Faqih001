@@ -4,21 +4,21 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function ImpactCounters() {
-  // Changed from useState to a constant array since we're not updating it
+  // Changed to use real image paths from the public directory
   const instagramPosts = [
     {
       id: 1,
-      imageUrl: "https://placehold.co/300x300/orange/white?text=Instagram+Post",
+      imageUrl: "/images/insta-1.jpg",
       caption: "Recent youth outreach event #TabassamInitiative #YouthFirstKE",
     },
     {
       id: 2,
-      imageUrl: "https://placehold.co/300x300/orange/white?text=Instagram+Post",
+      imageUrl: "/images/insta-2.jpg",
       caption: "Working with families in Likoni #SmileForTheFuture",
     },
     {
       id: 3,
-      imageUrl: "https://placehold.co/300x300/orange/white?text=Instagram+Post",
+      imageUrl: "/images/insta-3.jpg",
       caption: "Mwanga Wa Kesho Yetu progress #MwangaWaKeshoYetu",
     },
   ];
