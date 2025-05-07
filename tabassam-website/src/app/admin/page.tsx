@@ -82,6 +82,7 @@ export default function AdminDashboard() {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 required
+                aria-label="Username"
               />
             </div>
 
@@ -99,6 +100,7 @@ export default function AdminDashboard() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
+                aria-label="Password"
               />
             </div>
 
@@ -407,6 +409,7 @@ export default function AdminDashboard() {
                       type="number"
                       value="85"
                       className="mr-2 w-24 rounded border border-gray-300 px-3 py-2 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+                      aria-label="Children Reached Count"
                     />
                     <span className="text-sm text-gray-500 dark:text-gray-400">
                       out of target: 200
@@ -422,6 +425,7 @@ export default function AdminDashboard() {
                       type="number"
                       value="12"
                       className="mr-2 w-24 rounded border border-gray-300 px-3 py-2 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+                      aria-label="School Sessions Count"
                     />
                     <span className="text-sm text-gray-500 dark:text-gray-400">
                       out of target: 50
@@ -438,10 +442,17 @@ export default function AdminDashboard() {
                   Generate Reports
                 </h3>
                 <div className="mb-4">
-                  <label className="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300">
+                  <label 
+                    className="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300"
+                    htmlFor="reportType"
+                  >
                     Report Type
                   </label>
-                  <select className="w-full rounded-lg border border-gray-300 px-3 py-2 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
+                  <select 
+                    id="reportType"
+                    className="w-full rounded-lg border border-gray-300 px-3 py-2 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+                    aria-label="Report Type"
+                  >
                     <option>Monthly Impact Summary</option>
                     <option>Quarterly Progress Report</option>
                     <option>Annual Donor Report</option>
@@ -457,12 +468,14 @@ export default function AdminDashboard() {
                       type="date"
                       className="w-full rounded-lg border border-gray-300 px-3 py-2 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
                       defaultValue="2024-04-01"
+                      aria-label="Start Date"
                     />
                     <span>to</span>
                     <input
                       type="date"
                       className="w-full rounded-lg border border-gray-300 px-3 py-2 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
                       defaultValue="2024-05-01"
+                      aria-label="End Date"
                     />
                   </div>
                 </div>
@@ -518,35 +531,50 @@ export default function AdminDashboard() {
               
               <div className="space-y-4">
                 <div>
-                  <label className="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300">
+                  <label 
+                    className="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300"
+                    htmlFor="nationFeed"
+                  >
                     Nation.co.ke Feed URL
                   </label>
                   <input
+                    id="nationFeed"
                     type="text"
                     className="w-full rounded-lg border border-gray-300 px-3 py-2 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
                     value="https://nation.africa/kenya/rss/news"
+                    aria-label="Nation.co.ke Feed URL"
                   />
                 </div>
                 
                 <div>
-                  <label className="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300">
+                  <label 
+                    className="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300"
+                    htmlFor="standardFeed"
+                  >
                     Standard Digital Feed URL
                   </label>
                   <input
+                    id="standardFeed"
                     type="text"
                     className="w-full rounded-lg border border-gray-300 px-3 py-2 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
                     value="https://www.standardmedia.co.ke/rss/headlines.php"
+                    aria-label="Standard Digital Feed URL"
                   />
                 </div>
                 
                 <div>
-                  <label className="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300">
+                  <label 
+                    className="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300"
+                    htmlFor="nacadaFeed"
+                  >
                     NACADA Updates Feed
                   </label>
                   <input
+                    id="nacadaFeed"
                     type="text"
                     className="w-full rounded-lg border border-gray-300 px-3 py-2 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
                     value="https://nacada.go.ke/feed"
+                    aria-label="NACADA Updates Feed"
                   />
                 </div>
                 
@@ -555,6 +583,7 @@ export default function AdminDashboard() {
                     id="auto-approve"
                     type="checkbox"
                     className="h-4 w-4 rounded border-gray-300 text-orange-600"
+                    aria-label="Auto-approve news items"
                   />
                   <label
                     htmlFor="auto-approve"
@@ -565,10 +594,18 @@ export default function AdminDashboard() {
                 </div>
                 
                 <div>
+                  <label 
+                    htmlFor="keywords"
+                    className="sr-only"
+                  >
+                    Keywords for auto-approval
+                  </label>
                   <input
+                    id="keywords"
                     type="text"
                     className="w-full rounded-lg border border-gray-300 px-3 py-2 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
                     value="youth, children, drug abuse, substance abuse, mental health, rehabilitation"
+                    aria-label="Keywords for auto-approval"
                   />
                   <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
                     Comma-separated keywords
