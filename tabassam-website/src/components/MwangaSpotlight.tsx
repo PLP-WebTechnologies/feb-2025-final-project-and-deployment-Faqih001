@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 export default function MwangaSpotlight() {
   // Project stats that would be updated from admin dashboard
@@ -64,7 +63,7 @@ export default function MwangaSpotlight() {
                 Mwanga Wa Kesho Yetu aims to create a comprehensive support system 
                 for children and youth at risk of substance abuse in Likoni. 
                 By combining school interventions, family support, and community
-                partnerships, we're creating a network of protection and opportunity.
+                partnerships, we&apos;re creating a network of protection and opportunity.
               </p>
               <ul className="ml-5 space-y-2 list-disc text-gray-700 dark:text-gray-300">
                 <li>Early intervention in schools before drug use begins</li>
